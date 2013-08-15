@@ -40,8 +40,10 @@ public class WordSegFrame extends javax.swing.JInternalFrame {
         }
 
         initComponents();
-        inputArea.setFont(new Font("SansSerif", Font.PLAIN, 24));
+        inputArea.setFont(new Font("Garuda", Font.PLAIN, 24));
         inputArea.setWrapStyleWord(true);
+        
+        outputArea.setFont(new Font("Garuda", Font.PLAIN, 24));
     }
 
     /** This method is called from within the constructor to
@@ -76,11 +78,11 @@ public class WordSegFrame extends javax.swing.JInternalFrame {
         });
 
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel1.setText("ใส่คำที่ต้องการตัด");
+        jLabel1.setText("Input");
         jToolBar1.add(jLabel1);
 
         useDictToggle.setSelected(true);
-        useDictToggle.setText("ใช้พจนานุกรม");
+        useDictToggle.setText("Use dictionary");
         useDictToggle.setFocusable(false);
         useDictToggle.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         useDictToggle.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -128,6 +130,7 @@ public class WordSegFrame extends javax.swing.JInternalFrame {
         if (input != null && !input.equals("")) {
             try {
                 NukeTokenizer3 tok = new NukeTokenizer3(input, model, isUseDict);
+                //System.out.println("Tokenizing: "+input);
                 useTokenizer(tok);
             } catch (IOException ex) {
                 ex.printStackTrace();
@@ -142,7 +145,7 @@ public class WordSegFrame extends javax.swing.JInternalFrame {
         tokenized = tokenized.replace("|", "<font color=red>|</font>");
         tokenized = tokenized.replace("\r\n", "\n");
         tokenized = tokenized.replace("\n", "<br>");
-        outputArea.setText("<html><font size=14>" + tokenized + "</font></html>");
+        outputArea.setText("<html><font size=14 face=\"Garuda\">" + tokenized + "</font></html>");
     }
     private void useDictToggleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_useDictToggleActionPerformed
         this.isUseDict = useDictToggle.isSelected();

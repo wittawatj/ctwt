@@ -831,8 +831,14 @@ public abstract class AbstractFVGenerator implements FVGenerator {
 
     }
 
+    private static FeatureUnit[] defaultFeatureUnits;
+    
     public static FeatureUnit[] getDefaultFeatureUnits() {
-        return getDefaultFeatureUnits5();
+    	if(defaultFeatureUnits==null){
+    		// this cache is necessary as constructing FeatureUnit[] may be expensive 
+    		defaultFeatureUnits =getDefaultFeatureUnits5(); 
+    	}
+        return defaultFeatureUnits;
 
     }
 }
