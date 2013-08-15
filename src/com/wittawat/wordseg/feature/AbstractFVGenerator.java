@@ -832,7 +832,7 @@ public abstract class AbstractFVGenerator implements FVGenerator {
     }
 
     public static FeatureUnit[] getDefaultFeatureUnits() {
-        return getDefaultFeatureUnits14();
+        return getDefaultFeatureUnits5();
 
     }
 }

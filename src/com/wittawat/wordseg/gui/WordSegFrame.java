@@ -102,7 +102,7 @@ public class WordSegFrame extends javax.swing.JInternalFrame {
                 inputAreaKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                inputAreaKeyTyped(evt);
+
             }
         });
         jScrollPane1.setViewportView(inputArea);
@@ -118,9 +118,6 @@ public class WordSegFrame extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void inputAreaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inputAreaKeyTyped
-    }//GEN-LAST:event_inputAreaKeyTyped
 
     private void jToolBar1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jToolBar1KeyReleased
         // TODO add your handling code here:
